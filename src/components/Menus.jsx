@@ -19,6 +19,7 @@ const Menus = ({ restaurant }) => {
       <section className="__menuList">
         <div className="allMenus">
         {restaurant.layoutNavigation.map((category) => {
+          console.log(category)
           return (
             <div key={category.label} >
           <ArticleMenu articleMenu={restaurant.items} category={category.layoutId}/>
