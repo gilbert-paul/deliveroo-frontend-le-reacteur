@@ -5,7 +5,7 @@ const ArticleMenu = ({articleMenu, category})=>{
     <div className="__lunchs">
 
     {articleMenu?articleMenu.map(lunch=>{
-      if(lunch.categoryID === category){
+      if(lunch.categoryId === category){
 
         return <div className="__lunch" key={lunch.id}>
       <div >

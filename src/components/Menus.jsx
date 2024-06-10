@@ -6,7 +6,7 @@ const Menus = ({ restaurant }) => {
     <>
       <section className="__presentation">
         <div>
-          <h2>{restaurant.restaurant.name}</h2>
+          <h2>{restaurant.restaurant.name || restaurant.meta.metatags.title}</h2>
           <p>{restaurant.restaurant.description || restaurant.meta.metatags.description}</p>
         </div>
         <div>
