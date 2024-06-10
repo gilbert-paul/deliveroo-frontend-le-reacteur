@@ -6,7 +6,7 @@ const ArticleMenu = ({articleMenu, category})=>{
 
     {articleMenu?articleMenu.map(lunch=>{
       if(lunch.categoryId === category){
-
+        console.log("not here")
         return <div className="__lunch" key={lunch.id}>
       <div >
       <h3>{lunch.name}.</h3>
