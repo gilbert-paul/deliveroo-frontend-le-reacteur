@@ -1,23 +1,27 @@
-const ArticleMenu = ({articleMenu})=>{
+const ArticleMenu = ({articleMenu, category})=>{
   return(
     <article>
     <h2>{articleMenu.name}</h2>
     <div className="__lunchs">
 
-    {articleMenu.meals?articleMenu.meals.map(lunch=>{
-      return <div className="__lunch" key={lunch.title}>
+    {articleMenu?articleMenu.map(lunch=>{
+      if(lunch.categoryID === category){
+
+        return <div className="__lunch" key={lunch.id}>
       <div >
-      <h3>{lunch.title}.</h3>
+      <h3>{lunch.name}.</h3>
       <p>{lunch.description ? lunch.description.split("").splice(0,60).join("")+ " ..." : ""}</p>
       <div className="__labels">
-        <span>{lunch.price} €</span><span>{lunch.popular? "★ Populaire":""}</span>
+        <span>{lunch.price.formatted}</span><span>{lunch.popular? "★ Populaire":""}</span>
       </div>
       </div>
-      {lunch.picture?
-      <img src={lunch.picture} alt="" />
-      :<></>}
+      {lunch.image.url?
+      <img src={lunch.image.url} alt="" />
+    :<></>}
     </div>
+      }
     }):""}
+  
   </div>
     </article>
   )

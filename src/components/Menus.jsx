@@ -7,21 +7,21 @@ const Menus = ({ restaurant }) => {
       <section className="__presentation">
         <div>
           <h2>{restaurant.restaurant.name}</h2>
-          <p>{restaurant.restaurant.description || restaurant.metatags.description}</p>
+          <p>{restaurant.restaurant.description || restaurant.meta.metatags.description}</p>
         </div>
         <div>
           <img
-            src={restaurant.restaurant.picture || restaurant.metatags.image}
+            src={restaurant.restaurant.picture || restaurant.meta.metatags.image}
             alt="Main picture from the restaurant"
           />
         </div>
       </section>
       <section className="__menuList">
         <div className="allMenus">
-        {restaurant.categories.map((articleMenu) => {
+        {restaurant.layoutNavigation.map((category) => {
           return (
-            <div key={articleMenu.name} >
-          <ArticleMenu articleMenu={articleMenu} />
+            <div key={category.label} >
+          <ArticleMenu articleMenu={restaurant.items} category={category.layoutId}/>
           
             </div>
           )
