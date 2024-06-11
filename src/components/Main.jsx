@@ -2,7 +2,7 @@ import axios from "axios";
 import Menus from "./Menus";
 import { useEffect, useState } from "react";
 const urlBackend = import.meta.env.VITE_APP_BACKEND_URL
-const urlSearched ="Paris/11eme-belleville/dong-huong?day=today&geohash=u09tvzq678ru&time=ASAP"
+const urlSearched ="/menu/Paris/11eme-belleville/dong-huong?day=today&geohash=u09tvzq678ru&time=ASAP"
 
 let result = [];
 const Main = () => {
