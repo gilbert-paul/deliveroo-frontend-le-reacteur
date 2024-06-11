@@ -10,7 +10,7 @@ const Main = () => {
   useEffect(() => {
     const fetchData = async () => {
       await axios
-        .get(`urlBackend${urlSearched}`)
+        .get(urlBackend+urlSearched)
         .then((response) => {
           result = response.data;
           setIsLoading(true);
