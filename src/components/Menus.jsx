@@ -16,6 +16,11 @@ const [seeBucket, setSeeBucket] = useState(false)
         setSeeBucket(false)
       }
     })
+    if(window.innerWidth>768){
+      setSeeBucket(true)
+    } else {
+      setSeeBucket(false)
+    }
     setArticlesArray(articlesArray)
     if(articlesArray.length>0){
       setEmpty(false)
