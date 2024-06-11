@@ -278,7 +278,9 @@ aside {
   gap: 5px;
 }
 
-
+.__bucket.__empty div:nth-of-type(2) p{
+  padding: 1em;
+}
 @media only screen and (max-width:1124px) {
   .__menuList article .__lunch {
     width: 100%
