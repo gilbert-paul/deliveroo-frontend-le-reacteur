@@ -1,7 +1,28 @@
+import { useState, useEffect } from "react";
 import ArticleMenu from "./ArticleMenu";
 import Bucket from "./Bucket";
 
 const Menus = ({ restaurant }) => {
+  const [empty, setEmpty] = useState(false)
+  const [articlesArray, setArticlesArray] = useState([])
+const [seeBucket, setSeeBucket] = useState(false)
+
+  useEffect(()=>{
+    window.addEventListener("resize",()=>{
+
+      if(window.innerWidth>768){
+        setSeeBucket(true)
+      } else {
+        setSeeBucket(false)
+      }
+    })
+    setArticlesArray(articlesArray)
+    if(articlesArray.length>0){
+      setEmpty(false)
+      } else {setEmpty(true), setSeeBucket(false)}
+  },[articlesArray])
+
+
   return (
     <>
       <section className="__presentation">
@@ -21,13 +42,13 @@ const Menus = ({ restaurant }) => {
         {restaurant.layoutNavigation.map((category) => {
           return (
             <div key={category.label} >
-          <ArticleMenu articleMenu={restaurant.items} category={category}/>
+          <ArticleMenu articlesArray={articlesArray} setArticlesArray={setArticlesArray} articleMenu={restaurant.items} category={category}/>
           
             </div>
           )
           })}
         </div>
-        <Bucket/>
+        <Bucket articlesArray={articlesArray} setArticlesArray={setArticlesArray} empty={empty} seeBucket={seeBucket} setSeeBucket={setSeeBucket} />
       </section>
     </>
   );

@@ -1,7 +1,6 @@
 import React from "react";
 
-const ArticleMenu = ({ articleMenu, category }) => {
-
+const ArticleMenu = ({articlesArray, setArticlesArray, articleMenu, category }) => {
   return (
     <article>
       <h2>{category.label}</h2>
@@ -9,7 +8,11 @@ const ArticleMenu = ({ articleMenu, category }) => {
         {articleMenu.map((lunch) => {
           if (lunch.categoryId === category.layoutId) {
             return (
-              <div className="__lunch" key={lunch.id}>
+              <div onClick={()=>{
+                
+                setArticlesArray([...articlesArray ,{name:lunch.name, price:lunch.price.formatted, number:1,subtotal:lunch.price.fractional, id:lunch.id}])
+              }}
+              className="__lunch" key={lunch.id}>
                 <div>
                   <h3>{lunch.name}.</h3>
                   <p>
