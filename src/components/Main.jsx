@@ -12,7 +12,6 @@ const Main = () => {
         .get(urlBackend)
         .then((response) => {
           result = response.data;
-          console.log(result);
           setIsLoading(true);
         })
         .catch((error) => {return error});
