@@ -278,7 +278,7 @@ aside {
   gap: 5px;
 }
 
-.__bucket.__empty div:nth-of-type(2) p{
+.__bucket.__empty div p{
   padding: 1em;
 }
 @media only screen and (max-width:1124px) {
